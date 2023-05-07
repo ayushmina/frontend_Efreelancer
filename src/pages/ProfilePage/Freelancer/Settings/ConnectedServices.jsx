@@ -15,7 +15,7 @@ const ConnectedServices = () => {
 				<hr />
 				<Notify icon={<i className="fab fa-google"></i>}>
 					<Notify.Body>
-						<h6>Sign into JamTalent with 1-click</h6>
+						<h6>Sign into E Freelancer with 1-click</h6>
 						<small className="text-gray-light">You are not signed in through Google</small>
 					</Notify.Body>
 					<Notify.Action>
@@ -32,7 +32,7 @@ const ConnectedServices = () => {
 				<hr />
 				<Notify icon={<i className="fab fa-apple"></i>}>
 					<Notify.Body>
-						<h6>Sign into JamTalent with 1-click</h6>
+						<h6>Sign into E Freelancer with 1-click</h6>
 						<small className="text-gray-light">You are not signed in through Apple</small>
 					</Notify.Body>
 					<Notify.Action>

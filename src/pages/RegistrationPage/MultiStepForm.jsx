@@ -1,5 +1,5 @@
 import React from "react";
-import FinalForm from "./FinalForm";
+import FinalForm from "./FinalFor";
 
 function MultiStepForm() {
 	return (

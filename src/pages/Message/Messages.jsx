@@ -4,9 +4,9 @@ import MessageList from "components/MessageList/MessageList";
 import ChatWindow from "components/MessageList/ChatWindow2";
 import MessageLogin from "components/MessageList/MessageLogin";
 
-import io from "socket.io-client";
+// import io from "socket.io-client";
 
-const socket = io.connect("/");
+// const socket = io.connect("/");
 
 const Messages = (props) => {
 	return (
@@ -18,11 +18,11 @@ const Messages = (props) => {
 			</Col>
 			<Col xs={12} md={8}>
 				{/* <InProduction /> */}
-				{props.match.params.username && props.match.params.roomname ? (
-					<ChatWindow username={props.match.params.username} roomname={props.match.params.roomname} socket={socket} />
+				{/* {props.match.params.username && props.match.params.roomname ? (
+					// <ChatWindow username={props.match.params.username} roomname={props.match.params.roomname} socket={socket} />
 				) : (
-					<MessageLogin socket={socket}></MessageLogin>
-				)}
+					// <MessageLogin socket={socket}></MessageLogin>
+				)} */}
 			</Col>
 		</Row>
 	);

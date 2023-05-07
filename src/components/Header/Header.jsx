@@ -7,7 +7,7 @@ export default function Header() {
 		<nav className="navbar container-fluid navbar-expand-lg bg-secondary d-none d-md-block">
 			<div className="container">
 				<a className="navbar-brand" href="#">
-					JamTalent
+					E Freelancer
 				</a>
 				<button
 					className="navbar-toggler"

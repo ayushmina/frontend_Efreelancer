@@ -9,7 +9,7 @@ import Notifications from "pages/Notification/Notifications";
 import Messages from "pages/Message/Messages";
 import Admin from "pages/Admin";
 import UserLanding from "pages/UserLanding";
-
+import authSignup from "pages/Auth";
 const ROUTES = [
 	{ path: "/", exact: true, component: FreelancerFeed },
 	{ path: "/admin", component: Admin },
@@ -21,6 +21,8 @@ const ROUTES = [
 	{ path: "/notifications", component: Notifications },
 	{ path: "/messages", exact: true, component: Messages },
 	{ path: "/messages/:roomname/:username", component: Messages },
+	{ path: "/create_account", component: authSignup },
+
 ];
 
 export default ROUTES;

@@ -106,7 +106,7 @@ export default function Footer() {
 							{/* <!-- Links --> */}
 							<div className="col-xl col-lg col-md-3">
 								<div className="footer-links">
-									<h3>JamTalent</h3>
+									<h3>E Freelancer</h3>
 									<ul>
 										<li>
 											<a href="https://jamtalent.net/aboutus">
@@ -186,7 +186,7 @@ export default function Footer() {
 					<div className="container">
 						<div className="row">
 							<div className="col-xl-12">
-								© 2021 <strong>JamTalent</strong>. All Rights Reserved.
+								© 2021 <strong> E freelancer</strong>. All Rights Reserved.
 							</div>
 						</div>
 					</div>

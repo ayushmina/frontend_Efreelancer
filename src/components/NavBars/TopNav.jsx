@@ -66,7 +66,7 @@ const navItems = [
 			{ id: 3, path: "#", title: "Proposals" },
 			{ id: 4, path: "#", title: "Profile" },
 			{ id: 5, path: "#", title: "My Stats" },
-			{ id: 6, path: "#", title: "JamTalent Readiness Test" },
+			{ id: 6, path: "#", title: "E freelancer Readiness Test" },
 			{ id: 7, path: "#", title: "My Project Dashboard" },
 		],
 	},
@@ -295,7 +295,7 @@ const TopNav = () => {
 					<Row className="align-items-center">
 						<Col xs="auto">
 							<Link to="/">
-								<h5 className="mb-0 text-white">JamTalent</h5>
+								<h5 className="mb-0 text-white">E Freelancer</h5>
 							</Link>
 						</Col>
 						<Col xs="auto">
