@@ -21,9 +21,9 @@ function getCategory(payload, cb) {
     });
 }
 
-function editPost(payload, id, cb) {
+function addposts(payload, cb) {
   Agent
-    .fire('post', `${BACKEND_URL}/users/editPost/${id}`)
+    .fire('post', `${BACKEND_URL}/websites/postjob`)
     .send(payload)
     .end((err, res) => {
       var error = err || res.error ? ServerError(res) : (res.body && res.body.error) ? ServerError(res) : null;
@@ -71,10 +71,10 @@ function Search(payload, cb) {
 
 export default {
   getPost,
-  editPost,
   addPost,
   deletePost,
   myPost,
   Search,
-  getCategory
+  getCategory,
+  addposts
 }

@@ -14,7 +14,7 @@ const ROUTES = [
 	{ path: "/", exact: true, component: FreelancerFeed },
 	{ path: "/admin", component: Admin },
 	{ path: "/user", component: UserLanding },
-	{ path: "/register", exact: true, component: MultiStepForm },
+	{ path: "/registers", exact: true, component: MultiStepForm },
 	{ path: "/profile", exact: true, component: FreelancerProfile },
 	{ path: "/profile/settings", component: ProfileSettings },
 	{ path: "/profile/myProposal", component: MyProposal },

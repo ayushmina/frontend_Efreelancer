@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import MessageList from "components/MessageList/MessageList";
-import ChatWindow from "components/MessageList/ChatWindow2";
-import MessageLogin from "components/MessageList/MessageLogin";
+// import ChatWindow from "components/MessageList/ChatWindow2";
+// import MessageLogin from "components/MessageList/MessageLogin";
 
 // import io from "socket.io-client";
 

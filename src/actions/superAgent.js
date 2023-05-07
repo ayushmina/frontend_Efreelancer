@@ -34,7 +34,8 @@ const getLoginType = () => {
 }
 
 const fire = (method, url, shouldSendHeader=false) => {
-    let token = getToken();
+    // let token = getToken();
+    let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDU1ZTY1YmMyOTdkOWI0ODZlMTc2MzgiLCJpYXQiOjE2ODMzNTExMzF9.TRIvPbcYxkVnefh1PIlI1Bo-aGuwhDmmYaNjFOPC7YM"
     let loginType = getLoginType();
     console.log()
     let defaultHeaders = {}

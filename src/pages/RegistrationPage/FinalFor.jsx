@@ -8,11 +8,11 @@ import Multiselect from 'multiselect-react-dropdown';
 // import { StepOne, StepTwo, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, StepNine, StepTen, StepEleven, StepTwelve } from "./Forms";
 
 
-import validationSchema from "./FormModel/validationSchema";
-import Panel1 from "pages/Feeds/Freelancer/Panel1";
+// import Panel1 from "pages/Feeds/Freelancer/Panel1";
 import Cookies from "universal-cookie";
 const FinalForm = () => {
 
+	const cookie = new Cookies();
 
 	const [activeStep, setActiveStep] = useState(0);
 	const [Category, setCategory] = useState([{}]);
@@ -21,12 +21,6 @@ const FinalForm = () => {
 	const [description,setDescription]=useState("");
 	const [amount,setAmount]=useState("");
 	const [location,setLocation]=useState("");
-
-
-
-
-
-	const currentValidationSchema = validationSchema[activeStep];
 
 
 	async function _submitForm(values, actions) {
@@ -78,19 +72,16 @@ const FinalForm = () => {
 		}
 		console.log(dataTosend,"here is data");
 		alert("here is 84 line")
-		 postActions.addPost(dataTosend,(err,res)=>{
+		 postActions.addposts(dataTosend,(err,res)=>{
 
 			if(err){
-				console.log(err)
-				alert("error found")
-
+				
+				return
 			}else{
 				
 			}
-			e.preventDefault()
 
 		})
-		e.preventDefault()
 	}
 	return (
 		// <Container className="ms-form">
@@ -98,7 +89,7 @@ const FinalForm = () => {
 			<Row>
 				{/* Step navigation */}
 				<Col xs={12} md={3}>
-					<Panel1 />
+					{/* <Panel1 /> */}
 				</Col>
 
 
@@ -143,7 +134,7 @@ const FinalForm = () => {
 							
 						/>:""}
 						</Form>
-						<button type="submit"  onClick={(e)=>{
+						<button type="button" onClick={(e)=>{
 								e.preventDefault()
 							    addPost(e);
 						}}  >
