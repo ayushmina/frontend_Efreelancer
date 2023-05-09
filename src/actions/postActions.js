@@ -4,7 +4,7 @@ const BACKEND_URL = "http://localhost:4044";
 
 function getPost(payload, cb) {
   Agent
-    .fire('get', `${BACKEND_URL}/users/getPost`)
+    .fire('get', `${BACKEND_URL}/websites/getJobPost`)
     .query(payload)
     .end((err, res) => {
       var error = err || res.error ? ServerError(res) : (res.body && res.body.error) ? ServerError(res) : null;
