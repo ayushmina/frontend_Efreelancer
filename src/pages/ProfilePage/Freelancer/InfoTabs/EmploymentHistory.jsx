@@ -3,6 +3,7 @@ import { Row, Col, Card, Form } from "react-bootstrap";
 import EmptyAdd from "components/EmptyAdd/EmptyAdd";
 import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
+import { setegid } from "process";
 
 const Employment = ({ empHistory }) => {
 	return (
@@ -25,6 +26,12 @@ const Employment = ({ empHistory }) => {
 const EmploymentHistory = ({ employmentHistory, publicView }) => {
 	const [modalProps, setModalProps] = useState({ open: false, action: "" });
 
+	const[designation,setDesignation]=useState();
+	const[institute,setInstitute]=useState();
+	const[start,setStart]=useState();
+	const[end,setEnd]=useState();
+	const[details,setDetails]=useState();
+
 	const handleClose = () => setModalProps({ open: false });
 	const addHandleShow = () => {
 		setModalProps({ open: true, action: "Add" });
@@ -33,6 +40,13 @@ const EmploymentHistory = ({ employmentHistory, publicView }) => {
 	// 	setModalProps({ open: true, action: "Edit" });
 	// };
 
+	const updateemployemnthistory = () =>{
+		let datatosend={
+			designation,institute,start,end,details
+			
+		}
+	}
+
 	// modal field forms
 	const renderFormFields = (
 		<Form>
@@ -40,31 +54,36 @@ const EmploymentHistory = ({ employmentHistory, publicView }) => {
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="designation">
 						<Form.Label>Designation</Form.Label>
-						<Form.Control type="text" name="designation" />
+						<Form.Control type="text" name="designation"  onChange={(e)=>{
+							setDesignation(e.target.value);}}/>
 					</Form.Group>
 				</Col>
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="institute">
 						<Form.Label>Institute Name</Form.Label>
-						<Form.Control type="text" name="institute" />
+						<Form.Control type="text" name="institute" onChange={(e)=>{
+							setInstitute(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={6} className="mb-3">
 					<Form.Group controlId="startDate">
 						<Form.Label>Start Date</Form.Label>
-						<Form.Control type="text" name="startDate" />
+						<Form.Control type="text" name="startDate" onChange={(e)=>{
+							setStart(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={6} className="mb-3">
 					<Form.Group controlId="endDate">
 						<Form.Label>End Date</Form.Label>
-						<Form.Control type="text" name="endDate" />
+						<Form.Control type="text" name="endDate" onChange={(e)=>{
+							setEnd(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={12}>
 					<Form.Group controlId="details">
 						<Form.Label>Write something about your work</Form.Label>
-						<Form.Control as="textarea" rows={4} name="details" />
+						<Form.Control as="textarea" rows={4} name="details" onChange={(e)=>{
+							setDetails(e.target.value);}} />
 					</Form.Group>
 				</Col>
 			</Row>
