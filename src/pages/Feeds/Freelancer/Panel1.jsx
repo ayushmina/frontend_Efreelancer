@@ -1,13 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Avatar, Chip, LinearProgress } from "@material-ui/core";
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import BtnIcon from "components/Buttons/BtnIcon";
 import { Link } from "react-router-dom";
 import ChipGroup from "components/Chip/ChipGroup";
 import Sticky from "react-stickynode";
+import userAction from "actions/user.action";
 
 function LinearProgressWithLabel(props) {
+	
 	const { value, ...other } = props;
 
 	return (
@@ -28,7 +30,17 @@ const Panel1 = () => {
 	const chipDelete = () => {
 		console.info("Chip Delete");
 	};
+	useEffect(()=>{
+		userAction.getUserInfo({},(err,res)=>{
+			if(err){
 
+			}else{
+			console.log(res.data);
+
+			}
+		})
+		
+	})
 	return (
 		<>
 			<Card className="mb-3">
