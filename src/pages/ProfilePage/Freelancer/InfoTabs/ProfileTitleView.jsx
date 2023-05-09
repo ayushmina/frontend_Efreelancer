@@ -31,7 +31,9 @@ const ProfileTitleView = ({ activeUser, publicView }) => {
 				<Col xs={12}>
 					<Form.Group controlId="profileOverview">
 						<Form.Label>Overview</Form.Label>
-						<Form.Control as="textarea" rows={4} name="profileOverview" />
+						<Form.Control as="textarea" rows={4} onChange={(e)=>{
+							console.log(e.target.value,'here is vsalues')
+						}} name="profileOverview" />
 					</Form.Group>
 				</Col>
 			</Row>
