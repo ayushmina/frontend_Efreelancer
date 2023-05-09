@@ -7,10 +7,21 @@ const ProfileTitleView = ({ activeUser, publicView }) => {
 	// Modal Control
 	const [modalProps, setModalProps] = useState({ open: false, action: "" });
 
+	const [title,setTitle]= useState();
+	const [hour,setHour]= useState();
+	const [overview,setOverview]= useState();
+
+
 	const handleClose = () => setModalProps({ open: false });
 	const editHandleShow = () => {
 		setModalProps({ open: true, action: "Edit" });
 	};
+	const updateprofile = () =>{
+		let datatosend={
+			title,hour:hourlyRate,overview
+			
+		}
+	}
 
 	// modal field forms
 	const renderFormFields = (
@@ -19,21 +30,28 @@ const ProfileTitleView = ({ activeUser, publicView }) => {
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="profileTitle">
 						<Form.Label>Title</Form.Label>
-						<Form.Control type="text" name="profileTitle" />
+						<Form.Control  type="text"  name="profileTitle"  onChange={(e)=>{
+							setTitle(e.target.value);
+												}}/>
 					</Form.Group>
 				</Col>
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="hourlyRate">
 						<Form.Label>Hourly Rate</Form.Label>
-						<Form.Control type="text" name="hourlyRate" />
+						<Form.Control type="text" name="hourlyRate" onChange={(e)=>{
+							setHour(e.target.value);
+												}}/>
 					</Form.Group>
 				</Col>
 				<Col xs={12}>
 					<Form.Group controlId="profileOverview">
 						<Form.Label>Overview</Form.Label>
 						<Form.Control as="textarea" rows={4} onChange={(e)=>{
-							console.log(e.target.value,'here is vsalues')
-						}} name="profileOverview" />
+							setOverview(e.target.value);
+												}}
+						// onChange={(e)=>{
+						// 	console.log(e.target.value,'here is vsalues')}}
+							 name="profileOverview" />
 					</Form.Group>
 				</Col>
 			</Row>

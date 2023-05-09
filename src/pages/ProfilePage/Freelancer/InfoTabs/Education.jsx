@@ -6,6 +6,11 @@ import ModalForm from "components/Modal/ModalForm";
 const Education = ({ education, publicView }) => {
 	// Modal Control
 	const [modalProps, setModalProps] = useState({ open: false, action: "" });
+	const[instituteName,setInstitutename]=useState();
+	const[department,setDepartment]=useState();
+	const[degree,setDegree]=useState();
+	const[start,setStart]=useState();
+	const[end,setEnd]=useState();
 
 	const handleClose = () => setModalProps({ open: false });
 	const addHandleShow = () => {
@@ -15,6 +20,12 @@ const Education = ({ education, publicView }) => {
 		setModalProps({ open: true, action: "Edit" });
 	};
 
+	const updateeducation = () =>{
+		let datatosend={
+			instituteName,department,degree,start,end 
+			
+		}
+	}
 	// modal field forms
 	const renderFormFields = (
 		<Form>
@@ -22,31 +33,36 @@ const Education = ({ education, publicView }) => {
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="instituteName">
 						<Form.Label>Institute Name</Form.Label>
-						<Form.Control type="text" name="instituteName" />
+						<Form.Control type="text" name="instituteName"	onChange={(e)=>{
+							setInstitutename(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="degree">
 						<Form.Label>Degree</Form.Label>
-						<Form.Control type="text" name="degree" />
+						<Form.Control type="text" name="degree" onChange={(e)=>{
+							setDegree(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="department">
 						<Form.Label>Department</Form.Label>
-						<Form.Control type="text" name="department" />
+						<Form.Control type="text" name="department" onChange={(e)=>{
+							setDepartment(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={6}>
 					<Form.Group controlId="startDate">
 						<Form.Label>Start Date</Form.Label>
-						<Form.Control type="text" name="startDate" />
+						<Form.Control type="text" name="startDate"  onChange={(e)=>{
+							setStart(e.target.value);}}/>
 					</Form.Group>
 				</Col>
 				<Col xs={6}>
 					<Form.Group controlId="endDate">
 						<Form.Label>End Date</Form.Label>
-						<Form.Control type="text" name="endDate" />
+						<Form.Control type="text" name="endDate" onChange={(e)=>{
+							setEnd(e.target.value);}}/>
 					</Form.Group>
 				</Col>
 			</Row>

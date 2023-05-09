@@ -26,6 +26,10 @@ const Certificate = ({ certificates }) => {
 const Certification = ({ certificationList, publicView }) => {
 	const [modalProps, setModalProps] = useState({ open: false, action: "" });
 
+	const[title,setTitle] = useState();
+	const[certified,setCertified] = useState();
+	const[details,setDetails] = useState();
+
 	const handleClose = () => setModalProps({ open: false });
 	const addHandleShow = () => {
 		setModalProps({ open: true, action: "Add" });
@@ -34,6 +38,12 @@ const Certification = ({ certificationList, publicView }) => {
 	// 	setModalProps({ open: true, action: "Edit" });
 	// };
 
+	const updatecertificate = () =>{
+		let datatosend={
+			title,certified,details
+			
+		}
+	}
 	// modal field forms
 	const renderFormFields = (
 		<Form>
@@ -41,13 +51,15 @@ const Certification = ({ certificationList, publicView }) => {
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="title">
 						<Form.Label>Certificate Title</Form.Label>
-						<Form.Control type="text" name="title" />
+						<Form.Control type="text" name="title" onChange={(e)=>{
+							setTitle(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={12} className="mb-3">
 					<Form.Group controlId="from">
 						<Form.Label>Certified From</Form.Label>
-						<Form.Control type="text" name="from" />
+						<Form.Control type="text" name="from" onChange={(e)=>{
+							setCertified(e.target.value);}} />
 					</Form.Group>
 				</Col>
 				<Col xs={12} className="mb-3">
@@ -59,7 +71,8 @@ const Certification = ({ certificationList, publicView }) => {
 				<Col xs={12}>
 					<Form.Group controlId="details">
 						<Form.Label>About the Certificate</Form.Label>
-						<Form.Control as="textarea" rows={4} name="details" />
+						<Form.Control as="textarea" rows={4} name="details"  onChange={(e)=>{
+							setDetails(e.target.value);}}/>
 					</Form.Group>
 				</Col>
 			</Row>
