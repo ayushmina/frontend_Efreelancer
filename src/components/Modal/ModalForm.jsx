@@ -4,7 +4,7 @@ import { Modal } from "react-bootstrap";
 import { Button } from "@material-ui/core";
 
 const ModalForm = (props) => {
-	const { title, children, onHide, action, ...other } = props;
+	const { title, children, onHide, action, submit, ...other } = props;
 	return (
 		<Modal centered scrollable {...other} onHide={onHide}>
 			<Modal.Header closeButton className="px-4">
@@ -15,7 +15,7 @@ const ModalForm = (props) => {
 				<Button className="me-3" color="secondary" disableElevation onClick={onHide}>
 					Cancel
 				</Button>
-				<Button variant="contained" color="secondary" disableElevation>
+				<Button variant="contained" color="secondary" onClick={submit} disableElevation>
 					{action}
 				</Button>
 			</Modal.Footer>

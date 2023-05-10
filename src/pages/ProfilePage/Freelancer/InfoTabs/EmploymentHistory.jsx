@@ -114,7 +114,7 @@ const EmploymentHistory = ({ employmentHistory, publicView }) => {
 				</Card>
 			</Col>
 			{/* Modal */}
-			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Employment History">
+			<ModalForm show={modalProps.open}  onHide={handleClose} action={modalProps.action} title="Employment History">
 				{renderFormFields}
 			</ModalForm>
 		</>
