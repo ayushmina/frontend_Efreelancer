@@ -2,9 +2,9 @@ import Agent from "./superAgent";
 import { ServerError } from '../utils/helpers';
 const BACKEND_URL = "http://localhost:4044";
 
-function login(payload, cb) {
+function signUp(payload, cb) {
     Agent
-      .fire('post', `${BACKEND_URL}/users/loginSignup`)
+      .fire('post', `${BACKEND_URL}/websites/adduser`)
       .send(payload)
       .end((err, res) => {
         var error = err || res.error ? ServerError(res) : (res.body && res.body.error) ? ServerError(res) : null;
@@ -36,7 +36,7 @@ function login(payload, cb) {
 
   
 export default {
-    login,
+  signUp,
     getUserInfo,
     updateuserInfo
   }

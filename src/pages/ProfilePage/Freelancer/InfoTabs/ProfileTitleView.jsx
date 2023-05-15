@@ -20,20 +20,21 @@ const ProfileTitleView = ({ activeUser, publicView }) => {
 	};
 	const submit = () =>{
 		let datatosend={
-			overview:{
+			data:{
 				title:title,
 				HourlyRate:hour,
 				introduction:overview
-			}
+			},
+			type:"Overview"
 		}
 		console.log('here is i am')
-		// userAction.updateuserInfo(datatosend,(err,res)=>{
-		// 	if(err){
+		userAction.updateuserInfo(datatosend,(err,res)=>{
+			if(err){
 
-		// 	}else{
-		// 		console.log(res);
-		// 	}
-		// })
+			}else{
+				console.log(res);
+			}
+		})
 		
 	}
 

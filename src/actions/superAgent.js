@@ -6,8 +6,8 @@ const cookie = new Cookies();
 
 let AuthIntercept = require('superagent-intercept')((err, res) => {
     if (res && res.body && (res.body.statusCode === 401 || res.body.statusCode === 403)) {
-         removeSession();
-         window.location = '/';
+        //  removeSession();
+        //  window.location = '/';
          return
     }
 });
@@ -19,8 +19,10 @@ let removeSession = () => {
 
 const getToken = () => {
     let token = cookie.get('x-access-token-ns', { path: '/' });
+    let token1 = cookie.get('address', { path: '/' });
+
     console.log(token,"HERE IS TOKEN");
-    return token
+    return {token,token1}
 }
 const getTokenGuest = () => {
     let token = cookie.get('x-access-token-gt', { path: '/' });
@@ -34,16 +36,16 @@ const getLoginType = () => {
 }
 
 const fire = (method, url, shouldSendHeader=false) => {
-    // let token = getToken();
-    let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDU1ZTY1YmMyOTdkOWI0ODZlMTc2MzgiLCJpYXQiOjE2ODMzNTExMzF9.TRIvPbcYxkVnefh1PIlI1Bo-aGuwhDmmYaNjFOPC7YM"
+    let {token,token1} = getToken();
+    // let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDU1ZTY1YmMyOTdkOWI0ODZlMTc2MzgiLCJpYXQiOjE2ODMzNTExMzF9.TRIvPbcYxkVnefh1PIlI1Bo-aGuwhDmmYaNjFOPC7YM"
     let loginType = getLoginType();
     console.log()
     let defaultHeaders = {}
     if (token) {
-        defaultHeaders['authorization'] = token;
+        defaultHeaders['x-access-token'] = token;
     }
-    if (loginType) {
-        defaultHeaders['loginType'] = loginType;
+    if (token1) {
+        defaultHeaders['x-access-address'] = token1;
     }
     if(shouldSendHeader) {
         defaultHeaders['Authorization'] = `Basic bG1zOmxtcw==`;

@@ -31,7 +31,6 @@ const FinalForm = () => {
 
 	}
 	useEffect(() => {
-		cookie.set("x-access-token-ns","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDU1ZTY1YmMyOTdkOWI0ODZlMTc2MzgiLCJpYXQiOjE2ODMzNTExMzF9.TRIvPbcYxkVnefh1PIlI1Bo-aGuwhDmmYaNjFOPC7YM")
 
 		postActions.getCategory({}, (err, res) => {
 			if (err) {
@@ -78,6 +77,8 @@ const FinalForm = () => {
 				
 				return
 			}else{
+            window.location = '/';
+
 				
 			}
 

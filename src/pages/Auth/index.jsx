@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Style/codebase.min.css";
+// import "../../Style/codebase.min.css";
 const authSignup = () => {
     return (
         <>

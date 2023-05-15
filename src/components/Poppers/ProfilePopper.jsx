@@ -21,11 +21,13 @@ export const QuickNav = ({ onClick }) => {
 	};
 
 	const quickNav = [
-		{ title: "My Gigs", icon: <i className="fas fa-file-invoice"></i>, path: "#" },
-		{ title: "Teams", icon: <i className="fas fa-users"></i>, path: "/profile/settings/teams", onClick: onClick },
-		{ title: `Theme: ${theme ? "Dark" : "Light"}`, icon: theme ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>, onClick: handleToggle },
-		{ title: "Settings", icon: <i className="fas fa-cog"></i>, path: "/profile/settings", onClick: onClick },
-		{ title: "Switch Account", icon: <i className="fas fa-exchange-alt"></i>, path: "/admin/dashboard", onClick: onClick },
+		{ title: "Bid list", icon: <i className="fas fa-file-invoice"></i>, path: "/BidList" },
+		{ title: "Job Post list", icon: <i className="fas fa-file-invoice"></i>, path: "/BidList" }, 
+
+			{ title: "Job Post", icon: <i className="fas fa-users"></i>, path: "/JobPost", onClick: onClick },
+		// { title: `Theme: ${theme ? "Dark" : "Light"}`, icon: theme ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>, onClick: handleToggle },
+		{ title: "Transaction", icon: <i className="fas fa-cog"></i>, path: "/Transaction", onClick: onClick },
+		// { title: "Switch Account", icon: <i className="fas fa-exchange-alt"></i>, path: "/admin/dashboard", onClick: onClick },
 		{ title: "Logout", icon: <i className="fas fa-sign-out-alt"></i> },
 	];
 
@@ -97,12 +99,12 @@ const ProfilePopper = ({ popupClose }) => {
 
 			<div className="p-3 pt-0">
 				<List disablePadding>
-					<ListItem button component={Link} to="#" className="text-secondary rounded-4 px-3">
+					{/* <ListItem button component={Link} to="#" className="text-secondary rounded-4 px-3">
 						<ListItemIcon className="me-3 text-secondary" classes={{ root: classes.root }}>
 							<i className="fas fa-headset fa-fr"></i>
 						</ListItemIcon>
 						<ListItemText primary="Help & Support" classes={{ root: classes.text }} disableTypography />
-					</ListItem>
+					</ListItem> */}
 					<ListItem button component={Link} to="#" className="text-secondary rounded-4 px-3">
 						<ListItemIcon className="me-3 text-secondary" classes={{ root: classes.root }}>
 							<i className="fas fa-tasks fa-fr"></i>

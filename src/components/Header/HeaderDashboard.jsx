@@ -182,7 +182,7 @@ const Header = (props) => {
 				<IconButton className="me-1 text-white d-block d-lg-none" onClick={mobileOpen ? handleMobileClose : handleMobileOpen}>
 					{mobileOpen ? <ChevronLeftIcon /> : <MenuIcon />}
 				</IconButton>
-				<NotificationPop classes={classes} activeRoute={activeRoute("/notifications")} />
+				{/* <NotificationPop classes={classes} activeRoute={activeRoute("/notifications")} /> */}
 				<ProfilePop classes={classes} />
 			</nav>
 		</>

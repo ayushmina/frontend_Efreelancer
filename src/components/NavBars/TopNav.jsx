@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AppBar, Avatar, Badge, Button, List, ListItem, ListItemText, makeStyles, Toolbar, Tooltip, Zoom } from "@material-ui/core";
 import { Col, Container, FormControl, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
@@ -7,6 +7,7 @@ import NavPopper from "components/Poppers/NavPopper";
 import NotificationList from "components/NotificationList/NotificationList";
 import ProfilePopper from "components/Poppers/ProfilePopper";
 import MessageList from "components/MessageList/MessageList";
+import Agent from "actions/superAgent";
 
 // icon button css
 const useStyles = makeStyles((theme) => ({
@@ -256,6 +257,7 @@ const TopNav = () => {
 	const activeRoute = (routeName) => {
 		return location.pathname === routeName ? true : false;
 	};
+	
 
 	// nav list with dropdown menu
 	const navList = navItems.map((item) => {
@@ -292,7 +294,7 @@ const TopNav = () => {
 		<>
 			<AppBar position="fixed" color="secondary" className="jamNav-top d-none d-md-block bs-400" id="topNav">
 				<Container fluid="lg" className="px-3 py-3">
-					<Row className="align-items-center">
+					<Row className="align-items-center ">
 						<Col xs="auto">
 							<Link to="/">
 								<h5 className="mb-0 text-white">E Freelancer</h5>
@@ -307,12 +309,13 @@ const TopNav = () => {
 								<FormControl className="ps-5 py-2 pe-2 text-white search-input border-0" placeholder="Search..." aria-label="Search..." aria-describedby="Search..." />
 							</div>
 						</Col>
-						<Col className="text-center">{navList}</Col>
+						
+						{/* <Col className="text-center">{navList}</Col> */}
 						<Col xs="auto">
 							{/* message panel */}
-							<MessagePop classes={classes} activeRoute={activeRoute("/messages")} />
+							{/* <MessagePop classes={classes} activeRoute={activeRoute("/messages")} /> */}
 							{/* notification panel */}
-							<NotificationPop classes={classes} activeRoute={activeRoute("/notifications")} />
+							{/* <NotificationPop classes={classes} activeRoute={activeRoute("/notifications")} /> */}
 							{/* user profile panel */}
 							<ProfilePop classes={classes} />
 						</Col>

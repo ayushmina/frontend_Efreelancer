@@ -9,19 +9,32 @@ import Notifications from "pages/Notification/Notifications";
 import Messages from "pages/Message/Messages";
 import Admin from "pages/Admin";
 import UserLanding from "pages/UserLanding";
-import authSignup from "pages/Auth";
+// import authSignup from "pages/Auth";
+import BidPage from "../pages/BigPage/index";
+import ListingOfBidsPage from "../pages/ListOfBid/Listpage";
+import Login from "pages/Login";
+import GetTransaction from "pages/transaction";
+
 const ROUTES = [
 	{ path: "/", exact: true, component: FreelancerFeed },
 	{ path: "/admin", component: Admin },
 	{ path: "/user", component: UserLanding },
-	{ path: "/registers", exact: true, component: MultiStepForm },
+	{ path: "/JobPost", exact: true, component: MultiStepForm },
 	{ path: "/profile", exact: true, component: FreelancerProfile },
 	{ path: "/profile/settings", component: ProfileSettings },
 	{ path: "/profile/myProposal", component: MyProposal },
 	{ path: "/notifications", component: Notifications },
 	{ path: "/messages", exact: true, component: Messages },
 	{ path: "/messages/:roomname/:username", component: Messages },
-	{ path: "/create_account", component: authSignup },
+	// { path: "/create_account", component: authSignup },
+	{ path: "/BidPage/:bidid",  component: BidPage },
+	{ path: "/BidList",  component: ListingOfBidsPage },
+	{ path: "/login",  component: Login },
+	{ path: "/Transaction",  component: GetTransaction },
+
+
+
+
 
 ];
 

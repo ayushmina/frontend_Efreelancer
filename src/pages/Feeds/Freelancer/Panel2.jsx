@@ -11,8 +11,9 @@ import BtnIcon from "components/Buttons/BtnIcon";
 import ChipGroup from "components/Chip/ChipGroup";
 import postActions from "actions/postActions";
 import moment from "moment";
-
-
+import { Link } from "react-router-dom";
+import userAction from "actions/user.action";
+import Agent from "actions/superAgent";
 const setCat=(category)=>{
 	let arr=[]
 	category.map(ele=>{
@@ -22,46 +23,11 @@ const setCat=(category)=>{
 }
 const FeedCard = (datas) => {
 
-
-
-
 	// console.log(data.data,"here is feedcard")
 	let data=datas.data;
 	const tags = setCat(data.category);
 	console.log(tags,"here is tags")
-	let dataaa={
-		"data": {
-			"_id": "645938622d7df32ca6671aed",
-			"clientId": {
-				"_id": "6455e65bc297d9b486e17638",
-				"lastName": "minaA"
-			},
-			"title": "ayushmina10@gmail.com",
-			"description": "kjbkjsdcsdcsc",
-			"category": [
-				{
-					"_id": "641d35b18ab4ad980914c953",
-					"Category": "react js",
-					"createdAt": "2023-03-24T05:31:29.301Z",
-					"updatedAt": "2023-03-24T05:31:29.301Z",
-					"__v": 0
-				},
-				{
-					"_id": "641d35b18ab4ad980914c953",
-					"Category": "react js",
-					"createdAt": "2023-03-24T05:31:29.301Z",
-					"updatedAt": "2023-03-24T05:31:29.301Z",
-					"__v": 0
-				}
-			],
-			"PaymentVerified": false,
-			"location": "jbbjk",
-			"amount": "44",
-			"createdAt": "2023-05-08T17:58:58.927Z",
-			"updatedAt": "2023-05-08T17:58:58.927Z",
-			"__v": 0
-		}
-	}
+
 	let lebel="Est. Budget: "+data.amount;
 
 
@@ -83,8 +49,9 @@ const FeedCard = (datas) => {
 					</small>
 				</Col>
 				<Col xs="auto">
-					<BtnIcon iconType="heart" />
-					<BtnIcon iconType="unlike" className="ms-2" />
+					<Link to={`/BidPage/${data._id}}`}>
+				<button >PLACE BID</button>
+			</Link>
 				</Col>
 			</Row>
 			{/* Offer details */}
@@ -120,7 +87,16 @@ const Panel2 = () => {
 	const tabChange = (event, newValue) => {
 		setValue(newValue);
 	};
+	useEffect(()=>{
 
+		let {token,token1}=Agent.getToken();
+		if(token||token1){
+			
+		}else{
+			//  window.location = '/login';
+
+		}
+	},[])
 	useEffect(()=>{
 		postActions.getPost({},(err,res)=>{
 			if(err){
@@ -151,8 +127,7 @@ const Panel2 = () => {
 					<Card.Body className="p-0">
 						<Tabs value={value} onChange={tabChange} indicatorColor="primary" textColor="primary" aria-label="Feed Tabs">
 							<Tab label="My Feed" />
-							<Tab label="Best Matches" />
-							<Tab label="Recommended" />
+							
 						</Tabs>
 					</Card.Body>
 				</Card>
